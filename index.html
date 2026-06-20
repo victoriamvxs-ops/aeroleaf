@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroLeaf - Organizador de Tarefas</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="hero">
+
+        <div class="hero-content">
+            <h1>☁️ AeroLeaf</h1>
+
+            <p>
+                Organize suas tarefas em um ambiente leve,
+                bonito e inspirador.
+            </p>
+        </div>
+
+    </header>
+
+    <main class="site-container">
+
+        <section class="stats-section">
+
+            <div class="stat-card">
+                <h3>Total</h3>
+                <span id="total-tasks">0</span>
+            </div>
+
+            <div class="stat-card">
+                <h3>Concluídas</h3>
+                <span id="completed-tasks">0</span>
+            </div>
+
+            <div class="stat-card">
+                <h3>Pendentes</h3>
+                <span id="pending-tasks">0</span>
+            </div>
+
+            <div class="stat-card">
+                <h3>Progresso</h3>
+                <span id="progress-percent">0%</span>
+            </div>
+
+        </section>
+
+        <!-- BARRA DE PROGRESSO -->
+        <section class="progress-section">
+
+            <div class="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+
+        </section>
+
+        <!-- CRIAÇÃO DAS TAREFAS -->
+        <section class="task-form">
+
+            <input
+                type="text"
+                id="task-input"
+                placeholder="Digite uma tarefa..."
+            >
+
+            <select id="priority-select">
+
+                <option value="baixa">
+                    Prioridade Baixa
+                </option>
+
+                <option value="media">
+                    Prioridade Média
+                </option>
+
+                <option value="alta">
+                    Prioridade Alta
+                </option>
+
+            </select>
+
+            <select id="category-select">
+
+                <option value="Pessoal">
+                    Pessoal
+                </option>
+
+                <option value="Estudos">
+                    Estudos
+                </option>
+
+                <option value="Trabalho">
+                    Trabalho
+                </option>
+
+                <option value="Saúde">
+                    Saúde
+                </option>
+
+            </select>
+
+            <input
+                type="datetime-local"
+                id="task-date"
+            >
+
+            <button id="add-btn">
+                ➕ Criar Tarefa
+            </button>
+
+        </section>
+
+        <section class="search-section">
+
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Pesquisar tarefas..."
+            >
+
+        </section>
+
+        <section class="filter-section">
+
+            <button
+                class="filter-btn active"
+                data-filter="all">
+                Todas
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="pending">
+                Pendentes
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="completed">
+                Concluídas
+            </button>
+
+            <div class="priority-filter-container">
+                <button
+                    class="filter-btn priority-toggle"
+                    id="priority-btn">
+                    📊 Prioridades
+                </button>
+
+                <div class="priority-dropdown" id="priority-dropdown">
+                    <button class="priority-option" data-priority="alta">🔴 Prioridade Alta</button>
+                    <button class="priority-option" data-priority="media">🟡 Prioridade Média</button>
+                    <button class="priority-option" data-priority="baixa">🟢 Prioridade Baixa</button>
+                </div>
+            </div>
+
+        </section>        
+
+        <section class="tasks-section">
+
+            <ul id="task-list"></ul>
+
+        </section>
+
+    </main>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
